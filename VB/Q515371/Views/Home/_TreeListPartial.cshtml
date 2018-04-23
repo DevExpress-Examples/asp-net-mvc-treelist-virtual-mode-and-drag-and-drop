@@ -1,0 +1,21 @@
+@{
+    var treeList = Html.DevExpress().TreeList(settings =>
+    {
+        settings.Name = "TreeList";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "TreeListPartial" };
+        settings.SettingsEditing.NodeDragDropRouteValues = new { Controller = "Home", Action = "MoveNodePartial" };
+        settings.SettingsBehavior.AllowDragDrop = true;
+        settings.AutoGenerateColumns = false;
+
+
+        settings.Columns.Add("FirstName");
+        settings.Columns.Add("LastName");
+        settings.Columns.Add("HireDate");
+
+        settings.KeyFieldName = "EmployeeID";
+        settings.ParentFieldName = "ReportsTo";        
+        settings.SettingsPager.Visible = true;
+        
+    });
+}
+@treeList.BindToVirtualData(Q515371.Models.TreeListVirtualModeHelper.VirtualModeCreateChildren,Q515371.Models.TreeListVirtualModeHelper.VirtualModeNodeCreating).GetHtml()
