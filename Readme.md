@@ -18,7 +18,7 @@ In virtual mode, a tree is created on demand and child nodes are created and ini
     else {
         e.Children = (from empl in nwd.Employees where empl.ReportsTo == parentEmployee.EmployeeID select empl).ToList();
     }          
-}
+  }
   ```
 * `nodeCreatingMethod` - handle the method to initialize a node in a tree. You should specify a node key value (the `NodeKeyValue` property) and cell values. If processed node has no child nodes, set the `IsLeaf` property to `true`.
   ```cs
