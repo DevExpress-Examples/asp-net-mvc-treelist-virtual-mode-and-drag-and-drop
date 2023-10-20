@@ -5,7 +5,7 @@
 
 # Tree List for ASP.NET MVC - How to load data from a database in virtual mode and implement node drag-and-drop functionality
 
-In virtual mode, a tree is created on demand and child nodes are created and initialized when their parent node is expanded. Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.TreeListExtension.BindToVirtualData(DevExpress.Web.Mvc.TreeListVirtualModeCreateChildrenMethod-DevExpress.Web.Mvc.TreeListVirtualModeNodeCreatingMethod)) method to implement virtual mode for the TreeList extension. The method requires two following delegate methods as parameters:
+Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.TreeListExtension.BindToVirtualData(DevExpress.Web.Mvc.TreeListVirtualModeCreateChildrenMethod-DevExpress.Web.Mvc.TreeListVirtualModeNodeCreatingMethod)) method to implement virtual mode for the TreeList extension. The method requires two following delegate methods as parameters:
 
 * `createChildrenMethod` - handle the method to create a list of business objects that correspond to the child nodes owned by the processed node. Assign the list to the event parameter’s `Children` property. The `NodeObject` property returns the node currently being processed. If the event is raised for the root node, the `NodeObject` property returns `null` (Nothing for VB).
   ```cs
@@ -60,7 +60,6 @@ public static void MoveNode(int EmployeeID, int? ReportsTo) {
     else
         empl.ReportsTo = newParentID;
     nwd.SubmitChanges();
-   
 }
 ```
 
