@@ -3,11 +3,11 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Tree List for ASP.NET MVC - How to load data from a database in virtual mode and implement node drag-and-drop functionality
+# Tree List for ASP.NET MVC - How to load data from a database in virtual mode and implement drag-and-drop functionality
 
-Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.TreeListExtension.BindToVirtualData(DevExpress.Web.Mvc.TreeListVirtualModeCreateChildrenMethod-DevExpress.Web.Mvc.TreeListVirtualModeNodeCreatingMethod)) method to implement virtual mode for the TreeList extension. The method requires two following delegate methods as parameters:
+Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.TreeListExtension.BindToVirtualData(DevExpress.Web.Mvc.TreeListVirtualModeCreateChildrenMethod-DevExpress.Web.Mvc.TreeListVirtualModeNodeCreatingMethod)) method to implement virtual mode for the [TreeList](https://docs.devexpress.com/AspNetMvc/13765/components/tree-list) extension. The method requires two following delegate methods as parameters:
 
-* `createChildrenMethod` - handle the method to create a list of business objects that correspond to the child nodes owned by the processed node. Assign the list to the event parameter’s `Children` property. The `NodeObject` property returns the node currently being processed. If the event is raised for the root node, the `NodeObject` property returns `null` (Nothing for VB).
+* `createChildrenMethod` - handle the method to create a list of child nodes owned by the processed node. Assign the list to the event parameter’s `Children` property. The `NodeObject` property returns the node currently being processed. If the event is raised for the root node, the `NodeObject` property returns `null` (Nothing for VB).
   ```cs
   public static void VirtualModeCreateChildren(TreeListVirtualModeCreateChildrenEventArgs e) {           
     Employee parentEmployee = e.NodeObject as Employee;
