@@ -5,9 +5,9 @@
 
 # Tree List for ASP.NET MVC - How to load data from a database in virtual mode and implement drag-and-drop functionality
 
-Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.TreeListExtension.BindToVirtualData(DevExpress.Web.Mvc.TreeListVirtualModeCreateChildrenMethod-DevExpress.Web.Mvc.TreeListVirtualModeNodeCreatingMethod)) method to implement virtual mode for the [TreeList](https://docs.devexpress.com/AspNetMvc/13765/components/tree-list) extension. The method requires two following delegate methods as parameters:
+Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.TreeListExtension.BindToVirtualData(DevExpress.Web.Mvc.TreeListVirtualModeCreateChildrenMethod-DevExpress.Web.Mvc.TreeListVirtualModeNodeCreatingMethod)) method to implement virtual mode for the [TreeList](https://docs.devexpress.com/AspNetMvc/13765/components/tree-list) extension. The method requires the following two delegate methods as parameters:
 
-* `createChildrenMethod` - handle the method to create a list of child nodes owned by the processed node. Assign the list to the event parameter’s `Children` property. The `NodeObject` property returns the node currently being processed. If the event is raised for the root node, the `NodeObject` property returns `null` (Nothing for VB).
+* `createChildrenMethod` - Handle this method to create a list of child nodes owned by the processed node. Assign the list to the event parameter’s `Children` property. The `NodeObject` property returns the node currently being processed. If the event is raised for the root node, the `NodeObject` property returns `null` (Nothing for VB).
   ```cs
   public static void VirtualModeCreateChildren(TreeListVirtualModeCreateChildrenEventArgs e) {           
     Employee parentEmployee = e.NodeObject as Employee;
@@ -19,7 +19,7 @@ Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web
     }          
   }
   ```
-* `nodeCreatingMethod` - handle the method to initialize a node in a tree. You should specify a node key value (the `NodeKeyValue` property) and cell values. If processed node has no child nodes, set the `IsLeaf` property to `true`.
+* `nodeCreatingMethod` - Handle this method to initialize a node in a tree. You should specify a node key value (the `NodeKeyValue` property) and cell values. If the processed node has no child nodes, set the `IsLeaf` property to `true`.
   ```cs
   public static void VirtualModeNodeCreating(TreeListVirtualModeNodeCreatingEventArgs e) {
       Employee empl = e.NodeObject as Employee;
@@ -39,7 +39,7 @@ Use the [BindToVirtualData](https://docs.devexpress.com/AspNetMvc/DevExpress.Web
   }
   ```
 
-These methods are  implemented in the `TreeListVirtualModeHelper` class.
+These methods are implemented in the `TreeListVirtualModeHelper` class.
 
 To implement the drag-and-drop functionality, define the [SettingsEditing.NodeDragDropRouteValues](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.MVCxTreeListSettingsEditing.NodeDragDropRouteValues) property.
 
