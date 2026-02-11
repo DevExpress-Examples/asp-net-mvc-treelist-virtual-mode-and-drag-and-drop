@@ -71,7 +71,7 @@ public static void MoveNode(int EmployeeID, int? ReportsTo) {
 * [TreeListVirtualModeHelper.cs](./CS/Q515371/Models/TreeListVirtualModeHelper.cs) (VB: [TreeListVirtualModeHelper.vb](./VB/Q515371/Models/TreeListVirtualModeHelper.vb))
 * [_TreeListPartial.cshtml](./CS/Q515371/Views/Home/_TreeListPartial.cshtml)
 <!-- feedback -->
-## Does This Example Address Your Development Requirements/Objectives?
+## Does this example address your development requirements/objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-mvc-treelist-virtual-mode-and-drag-and-drop&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-mvc-treelist-virtual-mode-and-drag-and-drop&~~~was_helpful=no)
 
